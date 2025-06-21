@@ -4,16 +4,19 @@ import { Dice } from './components/Dice/Dice'
 import { Field } from './components/field/field'
 
 function App() {
-    const [currentValue, setCurrentValue] = useState(1);
-    const rollDuce = () => {
+    const [position, setPosition] = useState(1);
+    const [currentValue, setCurrentValue] = useState(null);
+    const rollDice = () => {
       const randomValue = Math.floor(Math.random() * 6) + 1;
       setCurrentValue(randomValue);
+      setPosition(pos => (pos + randomValue) % 20);
     }
+    console.log(currentValue)
   return ( 
   <div className='container'>
-    <Field/>
+    <Field position={position}/>
     <Dice currentValue={currentValue}/>
-    <button onClick={() => rollDuce()}>Roll</button>
+    <button onClick={() => rollDice()}>Roll</button>
   </div>
   )
 }

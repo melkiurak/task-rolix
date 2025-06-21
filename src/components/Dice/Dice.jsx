@@ -7,15 +7,38 @@ import dice6 from '@img/Dice/Value=6.png';
 
 
 export const Dice = ({currentValue}) => {
-    const diceImg = [
-        {id: 1, img: dice1, alt: 'Dice with number one'},
-        {id: 2, img: dice2, alt: 'Dice with number two'},
-        {id: 3, img: dice3, alt: 'Dice with number three'},
-        {id: 4, img: dice4, alt: 'Dice with number four'},
-        {id: 5, img: dice5, alt: 'Dice with number five'},
-        {id: 6, img: dice6, alt: 'Dice with number six'},
-    ]
-    return <div>
-        <img src={diceImg[currentValue - 1].img} alt={diceImg[currentValue - 1].alt} />
+    return  <div className="cube">
+      <div className="cube-container">
+        <div className='cube-container__face'>
+            <div className='cube-container__pip'>
+                <span className='w-3.5 h-3.5 rounded-4xl bg-[#181A20] inline-block'></span>
+            </div>
+        </div>
+        <div className='cube-container__face'>
+            <div className='cube-container__pip'>
+                <span className='w-3.5 h-3.5 rounded-4xl bg-[#181A20] inline-block'></span>
+            </div>
+        </div>
+        <div className='cube-container__face'>
+            <div className='cube-container__pip'>
+                <span className='w-3.5 h-3.5 rounded-4xl bg-[#181A20] inline-block'></span>
+            </div>
+        </div>
+        <div className='cube-container__face'>
+            <div className='cube-container__pip'>
+                <span className='w-3.5 h-3.5 rounded-4xl bg-[#181A20] inline-block'></span>
+            </div>
+        </div>
+        <div className='cube-container__face'>
+            <div className='cube-container__pip'>
+                <span className='w-3.5 h-3.5 rounded-4xl bg-[#181A20] inline-block'></span>
+            </div>
+        </div>
+        <div className='cube-container__face'>
+            <div className='cube-container__pip'>
+                <span className='w-3.5 h-3.5 rounded-4xl bg-[#181A20] inline-block'></span>
+            </div>
+        </div>
+      </div>
     </div>
 }
