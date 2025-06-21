@@ -5,12 +5,14 @@ import { Field } from './components/field/field'
 import balance from '@img/balance.png'
 import { FaPlus } from "react-icons/fa";
 import { Timer } from './components/Timer/Timer';
+import { Shots } from './components/Shots/Shots';
 
 function App() {
-    const [position, setPosition] = useState(1);
-    const [currentValue, setCurrentValue] = useState(null);
-    const [maxShots, setMaxShots] = useState(9);
-    const rollDice = () => {
+  const totalShots = 10;
+  const [position, setPosition] = useState(1);
+  const [currentValue, setCurrentValue] = useState(null);
+  const [maxShots, setMaxShots] = useState(totalShots);
+  const rollDice = () => {
       if (maxShots === 0) {
         alert('У вас закінчилися кидки!');
         return; 
@@ -21,16 +23,14 @@ function App() {
       const newShots = maxShots - 1;
       setMaxShots(newShots);
       localStorage.setItem('maxShots', newShots);
-    };
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setMaxShots( prev => prev + 1);
-      }, 3000);
-      return () => clearInterval(interval)
-    }, [])
+  };
+  const addShot = () => {
+    setMaxShots(prev => Math.min(prev + 1, totalShots))
+  }
   return ( 
   <div className='wrapper'>
-    <Timer/>
+    <Shots maxShots={maxShots} totalShots={totalShots}/>
+    <Timer addShot={addShot}/>
     <Field position={position}/>
     <div className='flex items-center gap-2'>
       <img src={balance} alt="" />
