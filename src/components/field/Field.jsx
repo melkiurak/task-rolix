@@ -34,7 +34,7 @@ export const Field = ({position}) => {
     ];
     const chipSteps = cells[position - 1]?.area;
     
-    return <div className='max-w-[346px] w-full h-[346px] m-auto'>
+    return <div className='max-w-[346px] w-full h-[346px] '>
         <div className="grid grid-cols-6 grid-rows-6 gap-0 w-full h-full relative">
             {cells.map((cell, i) => (
                 <div key={i} className="cell hover-bg-gradient-img" style={{gridArea: cell.area,}}>
