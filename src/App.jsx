@@ -13,10 +13,12 @@ function App() {
     }
     console.log(currentValue)
   return ( 
-  <div className='container'>
+  <div className='wrapper'>
     <Field position={position}/>
     <Dice currentValue={currentValue}/>
-    <button onClick={() => rollDice()}>Roll</button>
+    <button className="container roll-btn"  onClick={() => rollDice()}>
+      <h3>Roll</h3>
+    </button>
   </div>
   )
 }
