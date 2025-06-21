@@ -4,6 +4,7 @@ import { Dice } from './components/Dice/Dice'
 import { Field } from './components/field/field'
 import balance from '@img/balance.png'
 import { FaPlus } from "react-icons/fa";
+import { Timer } from './components/Timer/Timer';
 
 function App() {
     const [position, setPosition] = useState(1);
@@ -29,6 +30,7 @@ function App() {
     }, [])
   return ( 
   <div className='wrapper'>
+    <Timer/>
     <Field position={position}/>
     <div className='flex items-center gap-2'>
       <img src={balance} alt="" />
