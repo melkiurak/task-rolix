@@ -39,7 +39,7 @@ function App() {
     setMaxShots(prev => Math.min(prev + 1, totalShots))
   }
   return ( 
-  <div className="flex flex-col gap-8 justify-center items-center max-w-[428px] w-full h-[926px] bg-no-repeat bg-cover bg-center bg-[url('src/assets/img/Bg.png')] m-auto mt-7 px-4">
+  <div className="wrapper">
     <Shots maxShots={maxShots} totalShots={totalShots}/>
     <Timer addShot={addShot}/>
     <Field position={position} currentValue={currentValue}/>
