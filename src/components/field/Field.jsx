@@ -6,7 +6,7 @@ import Material from '@img/Field/Materials.png';
 import Random from '@img/Field/Random.png';
 import Resource from '@img/Field/Resource.png';
 import Star from '@img/Field/Star.png';
-import Vip from '@img/Field/Vip.png';
+import Vip from '@img/Field/vip.png';
 import { Dice } from '../Dice/Dice';
 export const Field = ({position,currentValue}) => {
     const cells = [
