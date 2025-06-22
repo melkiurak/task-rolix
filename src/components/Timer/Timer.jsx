@@ -10,9 +10,9 @@ export const Timer = ({addShot}) => {
     
     useEffect(() => {
         if (timer === 0) {
-        addShot();
-        setTimer(29 * 60); 
-        return;
+            addShot();
+            setTimer(29 * 60); 
+            return;
         }
         const timerInterval = setInterval(() => {
         setTimer(prev => prev - 1);
